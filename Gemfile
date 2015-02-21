@@ -14,10 +14,11 @@ gem 'tzinfo-data'
 gem 'simple_form'
 gem 'masonry-rails'
 gem 'omniauth-facebook'
-
 gem 'capistrano', '3.2.1'
 gem 'capistrano-rails'
 gem 'capistrano-rbenv', '~> 2.0'
+gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 
 group :development, :test do
   gem 'byebug'
