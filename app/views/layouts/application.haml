@@ -9,4 +9,8 @@
   %body
     = render 'layouts/navbar'
     .container
-      = yield
+      - flash.each do |key, value|
+        %div{ class: bootstrap_flash_class(key) }
+          = value
+
+    = yield
