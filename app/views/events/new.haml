@@ -1,6 +1,6 @@
-= form_for [event] do |f|
+= form_for (@event) do |f|
   .form-group
-    = f.label :tittle
+    = f.label :title
     = f.text_field :title, class: 'form-control'
   .form-group
     = f.label :place
