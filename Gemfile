@@ -13,6 +13,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'tzinfo-data'
 gem 'simple_form'
 gem 'masonry-rails'
+gem 'omniauth-facebook'
+
+gem 'capistrano', '3.2.1'
+gem 'capistrano-rails'
+gem 'capistrano-rbenv', '~> 2.0'
 
 group :development, :test do
   gem 'byebug'
@@ -20,4 +25,6 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'omniauth-facebook'
+group :production do
+  gem 'unicorn', '4.8.3'
+end
