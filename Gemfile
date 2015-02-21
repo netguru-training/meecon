@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'tzinfo-data'
 gem 'simple_form'
+gem 'masonry-rails'
 
 group :development, :test do
   gem 'byebug'
