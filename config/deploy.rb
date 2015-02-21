@@ -1,7 +1,7 @@
 lock '3.2.1'
 
 set :application, 'meecon'
-set :repo_url, 'git@github.com:cintrzyk/meecon.git'
+set :repo_url, 'git@github.com:netguru-training/meecon.git'
 
 set :rbenv_custom_path, '/usr/local/rbenv'
 set :rbenv_ruby, '2.1.5'
