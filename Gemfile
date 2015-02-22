@@ -22,12 +22,12 @@ gem 'momentjs-rails', '>= 2.8.1'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 gem 'paperclip', '~> 4.2.1'
 gem 'kaminari'
+gem 'ffaker'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'ffaker'
 end
 
 group :production do
