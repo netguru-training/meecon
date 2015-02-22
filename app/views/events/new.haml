@@ -1,19 +1,10 @@
 .col-sm-6.col-md-offset-3
-  = form_for(@event) do |f|
-    = render 'application/error_messages', object: f.object
-    .form-group
-      = f.label :title
-      = f.text_field :title, class: 'form-control'
-    .form-group
-      = f.label :place
-      = f.text_field :place, class: 'form-control'
-    .form-group
-      = f.label :beginning
-      .input-group.col-sm-12
-        = f.text_field :beginning_at, class: 'form-control datetimepicker'
-    .form-group
-      = f.label :end
-      .input-group.col-sm-12
-        = f.text_field :end_at, class: 'form-control datetimepicker'
-    = f.submit 'Save', class: 'btn btn-primary wide-button'
-    
+  = simple_form_for @event do |f|
+    = f.input :title
+    = f.input :place
+    = f.input :picture
+    = f.label 'Begin date'
+    = f.text_field :beginning_at, class: ' form-control datetimepicker'
+    = f.label 'End date'
+    = f.text_field :end_at, class: ' form-control datetimepicker'
+    = f.button :submit
