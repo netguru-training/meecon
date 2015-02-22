@@ -1,7 +1,7 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'bootstrap-datetimepicker';
+@import "bootstrap-datetimepicker";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "masonry/transitions";
@@ -10,10 +10,10 @@ body {
   background-color: #FCFCFC;
 }
 
-#events {
+.events {
   margin: 0 auto;
   width: 100%;
-  .box {
+  .event {
     margin: 10px;
     width: 300px;
     text-align: center;
