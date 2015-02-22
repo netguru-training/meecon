@@ -15,7 +15,7 @@ set :linked_files, %w{
   config/unicorn.rb
   config/unicorn_init.sh
 }
-set :linked_dirs, %w{ tmp log }
+set :linked_dirs, %w{ tmp log public/system }
 set :scm, :git
 set :tmp_dir, "/home/#{fetch(:application)}/tmp"
 
