@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  belongs_to :user
   validates :title, :place,:beginning_at, :end_at,  presence: true
   validate :end_date_is_after_start_date
 
