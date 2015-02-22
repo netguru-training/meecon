@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :new]
   def new
     @event = Event.new
   end
@@ -14,6 +15,14 @@ class EventsController < ApplicationController
   end
 
   private
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to root_url
+    end
+  end
 
   def event_params
     params.require(:event).permit(:title, :place, :beginning_at, :end_at, :picture)

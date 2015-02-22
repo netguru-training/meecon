@@ -3,18 +3,19 @@
     .navbar-header
       = link_to "Meecon", root_path, class: 'navbar-brand'
     %ul.nav.navbar-nav.navbar-right
-      %li
-        = link_to "New Event", new_event_path 
-      / here navbar links (right side)
-      %li
-        - if logged_in?
+      - if logged_in?
+        %li
+          = link_to "New Event", new_event_path
+        / here navbar links (right side)
+        %li
           %p.navbar-text
             = current_user.name
             
             = link_to logout_path do
               %i.fa.fa-sign-out
               Sign out
-        - else
+      - else
+        %li
           %p.navbar-text
             = link_to '/auth/facebook' do
               %i.fa.fa-facebook-official
