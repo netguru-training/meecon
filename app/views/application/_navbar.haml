@@ -5,7 +5,9 @@
     %ul.nav.navbar-nav.navbar-right
       - if logged_in?
         %li
-          = link_to "New Event", new_event_path
+          = link_to new_event_path do
+            %i.fa.fa-plus
+            New event
         %li
           %p.navbar-text
             = current_user.name
