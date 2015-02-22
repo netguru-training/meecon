@@ -102,6 +102,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.2)
     jwt (1.2.1)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.9.3)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
@@ -237,6 +240,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   masonry-rails
   momentjs-rails (>= 2.8.1)
   omniauth-facebook
