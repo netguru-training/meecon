@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
     return if beginning_at.blank? || end_at.blank?
 
     if end_at < beginning_at
-      errors.add(:end, " date cannot be before the start date")
+      errors.add(:end, "cannot be before the start date")
     end
   end
 end
