@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
+  scope :coming, -> { order(end_at: :asc) }
+  scope :not_ended, -> { where("end_at > ?", Time.current) }
   validates :title, :place,:beginning_at, :end_at, :category_id,  presence: true
   validate :end_date_is_after_start_date
 
