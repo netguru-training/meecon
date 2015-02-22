@@ -8,7 +8,7 @@ pictures = ["http://images5.fanpop.com/image/polls/984000/984250_1332733386906_f
  "http://cdn.filmtrackonline.com/voltage/starcm_vault_root/images/%7Ba5e8dec8-73ca-4978-af89-5cae99554a05%7D/kristen_stewart_pictures_%7Bd5e824ad-e392-e111-ba52-5296b839ed91%7D.jpg"]
 
 random = Random.new
-1001.times do
+200.times do
   picture_url = pictures[rand(pictures.size)]
   date = rand(100).days.from_now
   Event.create!(
