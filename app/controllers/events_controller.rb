@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
     if @event.save
-      flash[:info] = "Event added successfully."
+      flash[:success] = "Event added successfully."
       redirect_to root_url
     else
       render 'new'
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   # Confirms a logged-in user.
   def logged_in_user
     unless logged_in?
-      flash[:danger] = "Please log in."
+      flash[:alert] = "Please log in."
       redirect_to root_url
     end
   end
