@@ -17,6 +17,7 @@ random = Random.new
     place: Faker::Address.city + " " + Faker::Address.country,
     beginning_at: date,
     end_at: date + 2.days,
-    category: categories.sample
+    category: categories.sample,
+    description: Faker::HipsterIpsum.words(250).join(' ').capitalize
   )
 end
