@@ -1,6 +1,7 @@
 .event.panel.panel-default
-  = image_tag(event.picture)
-  %h3
-    = event.title
-  %p.place
-    = event.place
+  = link_to event_path(event) do
+    =  image_tag(event.picture)
+    %h3
+      = event.title
+    %p.place
+      = event.place

@@ -1,18 +1,27 @@
 .row
   .col-md-12
     .text-center
-      = image_tag @event.picture, alt: @event.title
+      = image_tag @event.picture, alt: @event.title, class: "img-rounded"
       %h3
-        What?
+        %strong What?
         = @event.title
         %br
         %small
-          Where?
+          %strong Where?
+          %i.fa.fa-globe
           = @event.place
+      %p.description.center-block
+        %strong About?
+        = @event.description
       %p
-        When?
+        %strong When?
         %i.fa.fa-calendar
         = @event.beginning_at
-        Ends?
+      %p
+        %strong Ends?
         %i.fa.fa-calendar
         = @event.end_at
+      %p
+        = link_to root_path do
+          %i.fa.fa-backward
+          Back to all events
