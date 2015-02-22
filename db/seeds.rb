@@ -13,7 +13,7 @@ random = Random.new
   Event.create!(
     picture: URI.parse(picture_url),
     title: Faker::HipsterIpsum.words(3).join(' '),
-    place: Faker::Address.city + Faker::Address.country,
+    place: Faker::Address.city + " " + Faker::Address.country,
     beginning_at: date,
     end_at: date + 2.days
   )
