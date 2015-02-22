@@ -5,9 +5,29 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "masonry/transitions";
-@import "masonry/basic";
-@import "masonry/centered";
-@import "masonry/fluid";
-@import "masonry/gutters";
-@import "masonry/infinitescroll";
-@import "masonry/right-to-left";
+
+body {
+  background-color: #FCFCFC;
+}
+
+#events {
+  margin: 0 auto;
+  width: 100%;
+  .box {
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    h3 {
+      margin: 0;
+      padding: 25px 10px;
+    }
+    .place {
+      padding: 15px;
+      margin: 0;
+    }
+  }
+}
