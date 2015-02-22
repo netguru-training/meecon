@@ -1,7 +1,7 @@
 .row
   .col-md-12
-    .text-center
-      = image_tag @event.picture, alt: @event.title, class: "img-rounded"
+    .text-center.event-image.center-block
+      = image_tag @event.picture, alt: @event.title, class: "img-rounded img-responsive"
       %h3
         %strong What?
         = @event.title
@@ -10,7 +10,7 @@
           %strong Where?
           %i.fa.fa-globe
           = @event.place
-      %p.description.center-block
+      %p.center-block
         %strong About?
         = @event.description
       %p
