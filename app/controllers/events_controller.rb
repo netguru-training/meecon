@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   before_action :logged_in_user, only: [:create, :new]
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   def new
     @event = Event.new
     @categories = Category.all.map{|c| [ c.name, c.id ]}
