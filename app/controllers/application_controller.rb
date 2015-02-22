@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find_by(uid: session[:user_uid])
   end
+
+  private
+
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      flash[:alert] = "Please log in."
+      redirect_to root_url
+    end
+  end
 end
