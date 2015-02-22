@@ -2,6 +2,7 @@
   = simple_form_for @event do |f|
     = f.input :title
     = f.input :place
+    = f.input :category_id, collection: @categories, prompt: "Select one!"
     = f.input :picture
     = f.input :beginning_at, as: :string, input_html: { class: 'datetimepicker' }
     = f.input :end_at, as: :string, input_html: { class: 'datetimepicker' }

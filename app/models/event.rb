@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :user
-  validates :title, :place,:beginning_at, :end_at,  presence: true
+  belongs_to :category
+  validates :title, :place,:beginning_at, :end_at, :category_id,  presence: true
   validate :end_date_is_after_start_date
 
   has_attached_file :picture, default_url: "missing_:style.jpg"

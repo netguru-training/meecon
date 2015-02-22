@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @categories = Category.all.map{|c| [ c.name, c.id ]}
   end
 
   def create
@@ -11,6 +12,7 @@ class EventsController < ApplicationController
       flash[:success] = "Event added successfully."
       redirect_to root_path
     else
+      @categories = Category.all.map{|c| [ c.name, c.id ]}
       render 'new'
     end
   end
@@ -18,6 +20,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :place, :beginning_at, :end_at, :picture)
+    params.require(:event).permit(:title, :place, :beginning_at, :end_at, :picture, :category_id)
   end
 end
