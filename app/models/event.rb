@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   validates :title, :place,:beginning_at, :end_at,  presence: true
   validate :end_date_is_after_start_date
 
-  has_attached_file :picture
+  has_attached_file :picture, default_url: "missing_:style.jpg"
   validates_attachment_content_type :picture, content_type: /\Aimage/
 
   private
