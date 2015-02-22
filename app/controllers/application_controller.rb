@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     unless logged_in?
       flash[:alert] = "Please log in."
-      redirect_to root_url
+      redirect_to root_path
     end
   end
 end
