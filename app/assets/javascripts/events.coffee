@@ -1,14 +1,16 @@
 $(document).ready ->
-  $('.events').infinitescroll(
+  $container = $('.events')
+  $container.imagesLoaded ->
+    $container.masonry
+      itemSelector: '.event'
+      isFitWidth: true
+  $container.infinitescroll {
     navSelector: 'nav.pagination'
     nextSelector: 'nav.pagination a[rel=next]'
     itemSelector: '.event'
-  ,
+  },
   (newEvents) ->
-    $newEvents = $( newEvents );
-    $('.events').masonry( 'appended', $newEvents );
-  )
-
-  $('.events').masonry
-    itemSelector: '.event'
-    isFitWidth: true
+    $newEvents = $( newEvents ).css( opacity: 0 )
+    $newEvents.imagesLoaded ->
+      $newEvents.animate opacity: 1
+      $container.masonry 'appended', $newEvents, true
