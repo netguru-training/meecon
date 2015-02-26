@@ -2,11 +2,11 @@
   .container
     .navbar-header
       = link_to "Meecon", root_path, class: 'navbar-brand'
-    %ul.nav.navbar-nav.navbar-right.navbar-font-size
+    %ul.nav.navbar-nav.navbar-right.navbar-navigation
       - if logged_in?
         %li
           = link_to new_event_path do
-            %i.fa.fa-plus
+            = icon 'plus'
             New event
         %li
           %p.navbar-text
@@ -14,10 +14,10 @@
             = current_user.name
         %li
           = link_to logout_path do
-            %i.fa.fa-sign-out
+            = icon 'sign-out'
             Sign out
       - else
         %li
           = link_to '/auth/facebook' do
-            %i.fa.fa-facebook-official
+            = icon 'facebook-official'
             Login with Facebook
