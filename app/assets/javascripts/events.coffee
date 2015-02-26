@@ -1,9 +1,11 @@
 $ () ->
   $events = $('.events')
+
   $events.imagesLoaded () ->
-    $events.masonry
+    this.masonry
       itemSelector: '.event'
       isFitWidth: true
+
   $events.infinitescroll(
     {
       navSelector: 'nav.pagination'
@@ -13,6 +15,6 @@ $ () ->
     (newEvents) ->
       $newEvents = $(newEvents).css(opacity: 0)
       $newEvents.imagesLoaded () ->
-        $newEvents.animate opacity: 1
-        $events.masonry 'appended', $newEvents, true
+        this.animate(opacity: 1)
+        $events.masonry 'appended', this, true
   )
