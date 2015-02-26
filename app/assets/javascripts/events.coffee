@@ -2,7 +2,7 @@ $ () ->
   $events = $('.events')
 
   $events.imagesLoaded () ->
-    this.masonry
+    @masonry
       itemSelector: '.event'
       isFitWidth: true
 
@@ -15,6 +15,6 @@ $ () ->
     (newEvents) ->
       $newEvents = $(newEvents).css(opacity: 0)
       $newEvents.imagesLoaded () ->
-        this.animate(opacity: 1)
-        $events.masonry 'appended', this, true
+        @animate(opacity: 1)
+        $events.masonry('appended', this, true)
   )
