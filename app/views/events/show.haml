@@ -1,27 +1,28 @@
 .row
   .col-md-12
     .text-center.event-image.center-block
-      = image_tag @event.picture, alt: @event.title, class: "img-rounded img-responsive"
-      %h3
-        %strong What?
-        = @event.title
-        %br
-        %small
-          %strong Where?
-          %i.fa.fa-globe
-          = @event.place
-      %p.center-block
-        %strong About?
-        = @event.description
-      %p
-        %strong When?
-        %i.fa.fa-calendar
-        = @event.beginning_at
-      %p
-        %strong Ends?
-        %i.fa.fa-calendar
-        = @event.end_at
-      %p
-        = link_to root_path do
-          %i.fa.fa-backward
-          Back to all events
+      .well
+        = image_tag @event.picture, alt: @event.title, class: "img-rounded img-responsive"
+        %h3
+          %strong What?
+          = @event.title
+          %br
+          %small
+            %strong Where?
+            = icon 'globe'
+            = @event.place
+        %p.center-block
+          %strong About?
+          = @event.description
+        %p
+          %strong When?
+          = icon 'calendar'
+          = @event.beginning_at
+        %p
+          %strong Ends?
+          = icon 'calendar'
+          = @event.end_at
+        %p
+          = link_to root_path do
+            = icon 'backward'
+            Back to all events

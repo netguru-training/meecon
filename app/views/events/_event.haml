@@ -1,6 +1,6 @@
 .event.panel.panel-default
   = link_to event_path(event) do
-    =  image_tag(event.picture)
+    =  image_tag(event.picture, class: "img-responsive")
     %h3
       = event.title
     %p.place
