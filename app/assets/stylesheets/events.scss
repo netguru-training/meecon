@@ -27,3 +27,15 @@
   max-width: 500px;
 }
 
+table.user-events {
+  font-size: 14px;
+}
+
+dl.event-details {
+  dt {
+    width: 70px;
+  }
+  dd {
+    margin-left: 80px;
+  }
+}

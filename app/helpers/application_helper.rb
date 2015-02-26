@@ -7,4 +7,12 @@ module ApplicationHelper
     when 'alert' then "alert alert-warning"
     end
   end
+
+    def shorten_description(string, max_length = 280)
+    if string.length > max_length
+      string[0, max_length - 3] + "..."
+    else
+      string
+    end
+  end
 end

@@ -1,1 +1,44 @@
-This is view for events#index action.
+%h2 Your events
+- if current_user.events.any?
+  %table.table.table-striped.user-events
+    %tr
+      %thead
+        %th Picture
+        %th Details
+        %th Description
+        %th Actions
+    - @user_events.each do |event|
+      %tr
+        %td.col-md-2
+          =  image_tag(event.picture, class: "img-responsive")
+        %td.col-md-4
+          %dl.dl-horizontal.event-details
+            %dt
+              Title:
+            %dd
+              = event.title
+            %dt
+              Category:
+            %dd
+              = event.category.name
+            %dt
+              Place:
+            %dd
+              = event.place
+            %dt
+              Starts at:
+            %dd
+              = event.beginning_at    
+            %dt
+              Ends at:
+            %dd
+              = event.end_at                                      
+        %td.col-md-5
+          = shorten_description event.description
+        %td.col-md-1
+          = link_to "View", event_path(event), {class: "btn btn-success", role: "button"}
+  = paginate @user_events
+- else
+  You have not added any event yet. 
+  = link_to 'Click here', new_event_path
+  to add new event
