@@ -78,10 +78,17 @@ GEM
     coffee-script-source (1.9.1)
     colorize (0.7.5)
     columnize (0.9.0)
+    database_cleaner (1.3.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.3.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffaker (1.32.1)
@@ -180,6 +187,22 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.4.2)
+    rspec-core (3.1.7)
+      rspec-support (~> 3.1.0)
+    rspec-expectations (3.1.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.1.0)
+    rspec-mocks (3.1.3)
+      rspec-support (~> 3.1.0)
+    rspec-rails (3.1.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
+      rspec-support (~> 3.1.0)
+    rspec-support (3.1.2)
     sass (3.4.12)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -187,6 +210,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    shoulda-matchers (2.7.0)
+      activesupport (>= 3.0.0)
     simple_form (3.1.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -237,6 +262,8 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv (~> 2.0)
   coffee-rails (~> 4.1.0)
+  database_cleaner
+  factory_girl_rails
   ffaker
   font-awesome-sass
   haml
@@ -249,7 +276,9 @@ DEPENDENCIES
   paperclip (~> 4.2.1)
   pg
   rails (= 4.2.0)
+  rspec-rails
   sass-rails (~> 5.0)
+  shoulda-matchers
   simple_form
   spring
   tzinfo-data

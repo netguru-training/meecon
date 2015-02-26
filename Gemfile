@@ -32,3 +32,10 @@ end
 group :production do
   gem 'unicorn', '4.8.3'
 end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+end
