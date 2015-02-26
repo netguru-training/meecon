@@ -9,6 +9,10 @@
             = icon 'plus'
             New event
         %li
+          = link_to events_path do
+            = icon 'fa fa-th-list'
+            My events
+        %li
           %p.navbar-text
             = image_tag current_user.image, size: '20x20', alt: "Profile image"
             = current_user.name
