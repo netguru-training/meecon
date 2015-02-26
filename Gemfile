@@ -28,6 +28,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'rspec-rails',  '3.2.0'
 end
 
 group :production do
@@ -35,8 +36,7 @@ group :production do
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
   gem 'database_cleaner'
 end
