@@ -1,6 +1,5 @@
 set :branch, :master
 set :deploy_to, '/home/meecon/production'
-set :stage, :production
 
 server 'meecon.tk',
   user: 'meecon',
