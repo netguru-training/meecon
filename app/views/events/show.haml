@@ -9,20 +9,20 @@
           %br
           %small
             %strong Where?
-            %i.fa.fa-globe
+            = icon 'globe'
             = @event.place
         %p.center-block
           %strong About?
           = @event.description
         %p
           %strong When?
-          %i.fa.fa-calendar
+          = icon 'calendar'
           = @event.beginning_at
         %p
           %strong Ends?
-          %i.fa.fa-calendar
+          = icon 'calendar'
           = @event.end_at
         %p
           = link_to root_path do
-            %i.fa.fa-backward
+            = icon 'backward'
             Back to all events
