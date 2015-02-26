@@ -10,7 +10,7 @@ set :pty, true
 set :sudo_prompt, ""
 set :linked_files, %W{
   config/database.yml
-  config/nginx.#{fetch(:app_environment)}.conf
+  config/nginx.#{fetch(:stage)}.conf
   config/secrets.yml
   config/unicorn.rb
   config/unicorn_init.sh
@@ -36,7 +36,7 @@ namespace :deploy do
     desc "#{command} unicorn server"
     task command do
       on roles(:app) do
-        execute "service #{fetch(:application)}-#{fetch(:app_environment)} #{command}"
+        execute "service #{fetch(:application)}-#{fetch(:stage)} #{command}"
       end
     end
   end
