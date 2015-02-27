@@ -11,7 +11,8 @@ $ () ->
     nextSelector: 'nav.pagination a[rel=next]'
     itemSelector: '.event'
     loading: {
-      msgText: '<i class="fa fa-spinner fa-pulse fa-3x"></i>'
+      finishedMsg: 'There are no more events events to show.'
+      msgText: '<i class="fa fa-spinner fa-pulse fa-2x"></i>'
       img: 'data:image/gif;base64,R0lGODlhAQABAHAAACH5BAUAAAAALAAAAAABAAEAAAICRAEAOw=='
     },
     (newEvents) ->
