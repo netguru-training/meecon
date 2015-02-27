@@ -1,42 +1,47 @@
 %h2 My events
 - if current_user.events.any?
-  %table.table.table-striped.user-events
-    %tr
-      %thead
-        %th Picture
-        %th Details
-        %th Description
-        %th Actions
+  %ul.list-group
     - @user_events.each do |event|
-      %tr
-        %td.col-md-2
-          =  image_tag(event.picture, class: "img-responsive")
-        %td.col-md-4
-          %dl.dl-horizontal.event-details
-            %dt
-              Title:
-            %dd
-              = event.title
-            %dt
-              Category:
-            %dd
-              = event.category.name
-            %dt
-              Place:
-            %dd
-              = event.place
-            %dt
-              Starts at:
-            %dd
-              = event.beginning_at    
-            %dt
-              Ends at:
-            %dd
-              = event.end_at                                      
-        %td.col-md-5
-          = shorten_description event.description
-        %td.col-md-1
-          = link_to "View", event_path(event), {class: "btn btn-success", role: "button"}
+      %li.list-group-item
+        .row
+          .col-xs-3
+            =  image_tag(event.picture, class: "img-responsive")
+          .col-xs-9
+            .media-body
+              %h3.media-heading
+                = event.title
+              .row
+                .col-xs-12.col-md-6
+                  .row.no-gutter
+                    .col-xs-3.text-right.truncate
+                      Category:
+                    .col-xs-9
+                      %strong
+                        = event.category.name
+                  .row.no-gutter
+                    .col-xs-3.text-right.truncate
+                      Place:
+                    .col-xs-9
+                      %strong
+                        = event.place
+                .col-xs-12.col-md-6
+                  .row.no-gutter
+                    .col-xs-3.text-right.truncate
+                      Starts at:
+                    .col-xs-9
+                      %strong
+                        = event.beginning_at
+                  .row.no-gutter
+                    .col-xs-3.text-right.truncate
+                      Ends at:
+                    .col-xs-9
+                      %strong
+                        = event.end_at
+              .truncate-description
+                = event.description
+            .media-right
+              = link_to "View", event_path(event), {class: "btn btn-success", role: "button"}
+
   = paginate @user_events
 - else
   You have not added any event yet. 
