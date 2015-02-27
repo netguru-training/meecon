@@ -12,4 +12,4 @@ before_script:
   - cp config/database.yml.travis config/database.yml
   - cp config/secrets.yml.example config/secrets.yml
 script:
-  - "[[ $TRAVIS_BRANCH = 'master' ]] && bundle exec rspec && bundle exec cap staging deploy"
+  - "[[ $TRAVIS_BRANCH = 'master' ]] && bundle exec cap staging deploy"
