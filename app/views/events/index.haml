@@ -37,11 +37,9 @@
                     .col-xs-9
                       %strong
                         = event.end_at
-              .truncate-description
-                = event.description
+              = event.short_description
             .media-right
               = link_to "View", event_path(event), {class: "btn btn-success", role: "button"}
-
   = paginate @user_events
 - else
   You have not added any event yet. 
