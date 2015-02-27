@@ -1,6 +1,5 @@
 $ () ->
   $events = $('.events')
-  $spinner = $('#spinner')
 
   $events.imagesLoaded () ->
     @masonry
@@ -8,16 +7,16 @@ $ () ->
       isFitWidth: true
 
   $events.infinitescroll(
-    {
-      navSelector: 'nav.pagination'
-      nextSelector: 'nav.pagination a[rel=next]'
-      itemSelector: '.event'
+    navSelector: 'nav.pagination'
+    nextSelector: 'nav.pagination a[rel=next]'
+    itemSelector: '.event'
+    loading: {
+      msgText: '<i class="fa fa-spinner fa-pulse fa-3x"></i>'
+      img: 'data:image/gif;base64,R0lGODlhAQABAHAAACH5BAUAAAAALAAAAAABAAEAAAICRAEAOw=='
     },
     (newEvents) ->
-      $spinner.show()
       $newEvents = $(newEvents).css(opacity: 0)
       $newEvents.imagesLoaded () ->
-        $spinner.hide()
         @animate(opacity: 1)
         $events.masonry('appended', this, true)
   )
