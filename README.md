@@ -1,4 +1,4 @@
-This is MEECON app.
+#MEECON [![Build Status](https://travis-ci.org/netguru-training/meecon.svg?branch=master)](https://travis-ci.org/netguru-training/meecon) [![Code Climate](https://codeclimate.com/github/netguru-training/meecon/badges/gpa.svg)](https://codeclimate.com/github/netguru-training/meecon)
 
 ![codeclimate](https://d3s6mut3hikguw.cloudfront.net/github/netguru-training/meecon/badges/gpa.svg)
 ![coverage codeclimate](https://d3s6mut3hikguw.cloudfront.net/github/netguru-training/meecon/badges/coverage.svg)

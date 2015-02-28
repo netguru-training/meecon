@@ -8,9 +8,9 @@ set :rbenv_ruby, '2.1.5'
 
 set :pty, true
 set :sudo_prompt, ""
-set :linked_files, %w{
+set :linked_files, %W{
   config/database.yml
-  config/nginx.production.conf
+  config/nginx.#{fetch(:stage)}.conf
   config/secrets.yml
   config/unicorn.rb
   config/unicorn_init.sh
@@ -36,7 +36,7 @@ namespace :deploy do
     desc "#{command} unicorn server"
     task command do
       on roles(:app) do
-        execute "service unicorn_#{fetch(:application)} #{command}"
+        execute "service #{fetch(:application)}-#{fetch(:stage)} #{command}"
       end
     end
   end

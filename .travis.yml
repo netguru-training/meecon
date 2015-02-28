@@ -1,0 +1,21 @@
+language: ruby
+rvm: 2.1.5
+notifications:
+  email: false
+  slack:
+    secure: SK8ob6GZ9O1mOjcgf4wmI8LewUvmi6u8PrDZ7T3qmKbSpf5/yYZGho76b8axx69ZGd7PNYw0ia/ILBgzK1S0dKvz8EWvpx9YCeQFax21yKI2HWRihx1OqhRfSAo40dVW9idayfMxUMgPrnEqIir2EP7Ror9ZOhcRJzC+7I//saI=
+bundler_args: --without development production --deployment
+addons:
+  postgresql: 9.3
+env:
+  global:
+    secure: b+caeL867fF5VvkxLOQ73R7J+3nO+KC8T/o5QuQwccL1knWN+2uWqZpla25CiPhVpuxxaJcOd4A+bErEb90zpoKTMH/DxBpN7IZII6ZAZtpkctyyiPUSB9BV0RV9gYsK6QF/y/E1qlBzEGiRO2e+qhP4dpXzuP9L9cW6Jwc6HM4=
+before_script:
+  - openssl aes-256-cbc -k $DEPLOY_KEY -in config/deploy_id_rsa_enc_travis -d -a -out config/deploy_id_rsa
+  - chmod 600 config/deploy_id_rsa
+  - eval $(ssh-agent)
+  - ssh-add config/deploy_id_rsa
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+  - cp config/secrets.yml.example config/secrets.yml
+script: bundle exec rake travis
