@@ -27,8 +27,17 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails',  '3.2.0'
 end
 
 group :production do
   gem 'unicorn', '4.8.3'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers', require: false
+  gem 'database_cleaner'
+  gem 'codeclimate-test-reporter', require: false
 end
