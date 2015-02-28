@@ -5,8 +5,8 @@ end
 5.times do
   User.create!(
     email: Faker::Internet.email,
-    name: Faker::Name.first_name + " " + Faker::Name.last_name
-    )
+    name: Faker::Name.name
+  )
 end
 
 categories = Category.all
