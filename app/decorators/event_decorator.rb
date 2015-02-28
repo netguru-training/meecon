@@ -1,24 +1,19 @@
 class EventDecorator < Draper::Decorator
-  delegate_all
+  delegate :picture, :title, :place, :beginning_at, :end_at, :description, :category
 
-   def self.collection_decorator_class
+  def self.collection_decorator_class
     PaginatingDecorator
   end
 
   def beginning_at
-    object.beginning_at.strftime("%Y-%m-%d %R")
+    I18n.l object.beginning_at, format: :datetime
   end
 
   def end_at
-    object.beginning_at.strftime("%Y-%m-%d %R")
+    I18n.l object.beginning_at, format: :datetime
   end
 
   def short_description
-    max_length = 400
-    if object.description.length > max_length
-      object.description[0, max_length - 3] + "..."
-    else
-      object.description
-    end
+    h.truncate(object.description, length: 400, separator: ' ')
   end
 end
