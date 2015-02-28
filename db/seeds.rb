@@ -5,7 +5,8 @@ end
 5.times do
   User.create!(
     email: Faker::Internet.email,
-    name: Faker::Name.name
+    name: Faker::Name.name,
+    uid: rand(111111..99999999)
   )
 end
 
