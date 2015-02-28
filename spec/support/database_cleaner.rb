@@ -1,7 +1,6 @@
 require 'database_cleaner'
 
 RSpec.configure do |config|
-  # new config
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
     # Seed dataase. Use it only for essential
