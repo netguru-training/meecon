@@ -1,5 +1,8 @@
 This is MEECON app.
 
+![codeclimate](https://d3s6mut3hikguw.cloudfront.net/github/netguru-training/meecon/badges/gpa.svg)
+![coverage codeclimate](https://d3s6mut3hikguw.cloudfront.net/github/netguru-training/meecon/badges/coverage.svg)
+
 App features:
 - users login via facebook
 - users can create events
