@@ -27,34 +27,24 @@
   max-width: 500px;
 }
 
-dl.event-details {
-  margin: 0;
-  dt {
-    width: 70px;
-  }
-  dd {
-    margin-left: 80px;
-  }
-}
 
 li.list-group-item {
   border: 1px solid gray;
 }
 
 .row.no-gutter {
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
 }
 
-.row.no-gutter [class*='col-']:not(:first-child),
-.row.no-gutter [class*='col-']:not(:last-child) {
-  padding-right: 2px;
-  padding-left: 2px;
+.row.no-gutter [class*='col-'] {
+  &:not(:first-child),
+  &:not(:last-child) {
+    padding: 0px 2px;
+  }
 }
 
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  }
-
+}
