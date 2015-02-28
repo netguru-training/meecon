@@ -1,4 +1,4 @@
-#MEECON [![Build Status](https://travis-ci.org/netguru-training/meecon.svg?branch=master)](https://travis-ci.org/netguru-training/meecon)
+#MEECON [![Build Status](https://travis-ci.org/netguru-training/meecon.svg?branch=master)](https://travis-ci.org/netguru-training/meecon) [![Code Climate](https://codeclimate.com/github/netguru-training/meecon/badges/gpa.svg)](https://codeclimate.com/github/netguru-training/meecon)
 
 App features:
 - users login via facebook
