@@ -22,6 +22,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.0.0'
 gem 'paperclip', '~> 4.2.1'
 gem 'kaminari'
 gem 'ffaker'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'byebug'
