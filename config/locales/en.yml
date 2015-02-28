@@ -23,4 +23,4 @@ en:
   hello: "Hello world"
   time:
     formats:
-      datetime: "%Y-%m-%d %R"
+      date_minute_precision: "%Y-%m-%d %R"
