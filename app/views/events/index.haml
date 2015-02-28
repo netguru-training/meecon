@@ -40,7 +40,8 @@
               = event.short_description
             .media-right
               = link_to "View", event_path(event), {class: "btn btn-success", role: "button"}
-  = paginate @user_events
+  .text-center
+    = paginate @user_events
 - else
   You have not added any event yet. 
   = link_to 'Click here', new_event_path
