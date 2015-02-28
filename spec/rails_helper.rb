@@ -1,3 +1,6 @@
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start if ENV['CI']
+
 ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
@@ -17,9 +20,6 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
-    
-    # uncomment next line to seed databse before tests
-    # load "#{Rails.root}/db/seeds.rb"
   end
 
   config.around(:each) do |example|
