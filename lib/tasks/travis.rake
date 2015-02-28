@@ -1,10 +1,10 @@
 desc 'Travis CI'
 task :travis do
 
-  # sh 'bundle exec rspec'
+  sh 'bundle exec rspec'
 
   if ENV['TRAVIS_PULL_REQUEST'].to_s.to_i > 0
-    puts 'Pull request detected.'
+    puts 'Pull request detected. Skip deployment.'
     next # if this is a pull request, do not deploy
   end
 
