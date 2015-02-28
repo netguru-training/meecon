@@ -26,6 +26,22 @@
 .event-image {
   max-width: 500px;
 }
+
+li.list-group-item {
+  border: 1px solid gray;
+}
+
+.row.no-gutter {
+  margin: 0;
+
+  [class*='col-'] {
+    &:not(:first-child),
+    &:not(:last-child) {
+      padding: 0px 2px;
+    }
+  }
+}
+
 #infscr-loading {
   position: fixed;
   bottom: 10px;

@@ -1,8 +1,12 @@
 class EventsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :new]
+  before_action :logged_in_user, only: [:create, :new, :index]
+
+  def index
+    @user_events = current_user.events.page(params[:page]).per(10).decorate
+  end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:id]).decorate
   end
 
   def new
@@ -26,4 +30,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :place, :beginning_at, :end_at, :picture, :category_id, :description)
   end
+
 end

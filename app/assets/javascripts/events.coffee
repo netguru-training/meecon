@@ -7,8 +7,8 @@ $ () ->
       isFitWidth: true
 
   $events.infinitescroll(
-    navSelector: 'nav.pagination'
-    nextSelector: 'nav.pagination a[rel=next]'
+    navSelector: 'ul.pagination'
+    nextSelector: 'ul.pagination a[rel=next]'
     itemSelector: '.event'
     loading: {
       finishedMsg: 'There are no more events events to show.'

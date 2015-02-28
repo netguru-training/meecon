@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :events, only: [:new, :create, :show]
+  resources :events, only: [:new, :create, :show, :index]
 
   # facebook login
   get '/auth/facebook/callback', to: 'sessions#create'

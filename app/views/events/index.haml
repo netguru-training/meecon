@@ -1,0 +1,42 @@
+%h2 My events
+- if current_user.events.any?
+  %ul.list-group
+    - @user_events.each do |event|
+      %li.list-group-item
+        .row
+          .col-sm-3
+            = image_tag(event.picture, class: "img-responsive")
+          .col-sm-9
+            .media-body
+              %h3.media-heading
+                = link_to event.title, event_path(event)
+              .row
+                .col-xs-12.col-md-6
+                  .row.no-gutter
+                    .col-xs-3.text-right
+                      Category:
+                    .col-xs-9
+                      %strong= event.category.name
+                  .row.no-gutter
+                    .col-xs-3.text-right
+                      Place:
+                    .col-xs-9
+                      %strong= event.place
+                .col-xs-12.col-md-6
+                  .row.no-gutter
+                    .col-xs-3.text-right
+                      Starts at:
+                    .col-xs-9
+                      %strong= event.beginning_at
+                  .row.no-gutter
+                    .col-xs-3.text-right
+                      Ends at:
+                    .col-xs-9
+                      %strong= event.end_at
+              = event.short_description
+  .text-center
+    = paginate @user_events
+- else
+  You have not added any event yet. 
+  = link_to 'Click here', new_event_path
+  to add new event

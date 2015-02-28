@@ -23,6 +23,7 @@ gem 'paperclip', '~> 4.2.1'
 gem 'kaminari'
 gem 'ffaker'
 gem 'whenever', require: false
+gem 'draper', '~> 1.3'
 
 group :development, :test do
   gem 'byebug'
