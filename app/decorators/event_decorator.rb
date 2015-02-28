@@ -14,6 +14,6 @@ class EventDecorator < Draper::Decorator
   end
 
   def short_description
-    h.truncate(object.description, length: 400, separator: ' ')
+    h.truncate(object.description, length: 400, separator: ' ') { h.link_to "(read more)", h.event_path(event) }
   end
 end

@@ -4,42 +4,36 @@
     - @user_events.each do |event|
       %li.list-group-item
         .row
-          .col-xs-3
+          .col-sm-3
             =  image_tag(event.picture, class: "img-responsive")
-          .col-xs-9
+          .col-sm-9
             .media-body
               %h3.media-heading
-                = event.title
+                = link_to event.title, event_path(event)
               .row
                 .col-xs-12.col-md-6
                   .row.no-gutter
-                    .col-xs-3.text-right.truncate
+                    .col-xs-3.text-right
                       Category:
                     .col-xs-9
-                      %strong
-                        = event.category.name
+                      %strong= event.category.name
                   .row.no-gutter
-                    .col-xs-3.text-right.truncate
+                    .col-xs-3.text-right
                       Place:
                     .col-xs-9
-                      %strong
-                        = event.place
+                      %strong= event.place
                 .col-xs-12.col-md-6
                   .row.no-gutter
-                    .col-xs-3.text-right.truncate
+                    .col-xs-3.text-right
                       Starts at:
                     .col-xs-9
-                      %strong
-                        = event.beginning_at
+                      %strong= event.beginning_at
                   .row.no-gutter
-                    .col-xs-3.text-right.truncate
+                    .col-xs-3.text-right
                       Ends at:
                     .col-xs-9
-                      %strong
-                        = event.end_at
+                      %strong= event.end_at
               = event.short_description
-            .media-right
-              = link_to "View", event_path(event), {class: "btn btn-success", role: "button"}
   .text-center
     = paginate @user_events
 - else
