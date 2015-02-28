@@ -34,11 +34,11 @@ li.list-group-item {
 
 .row.no-gutter {
   margin: 0;
-}
 
-.row.no-gutter [class*='col-'] {
-  &:not(:first-child),
-  &:not(:last-child) {
-    padding: 0px 2px;
+  [class*='col-'] {
+    &:not(:first-child),
+    &:not(:last-child) {
+      padding: 0px 2px;
+    }
   }
 }
