@@ -18,7 +18,7 @@ random = Random.new
     beginning_at: date,
     end_at: date + 2.days,
     category: categories.sample,
-    description: Faker::HipsterIpsum.words(250).join(' ').capitalize,
+    description: Faker::Lorem.sentences(20).join(' '),
     user_id: rand(1..5)
   )
 end
