@@ -6,7 +6,7 @@ end
   User.create!(
     email: Faker::Internet.email,
     name: Faker::Name.name,
-    uid: rand(111111..99999999)
+    uid: "fake_" + rand(111111..99999999).to_s
   )
 end
 
